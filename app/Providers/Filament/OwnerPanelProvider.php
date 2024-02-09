@@ -59,7 +59,7 @@ class OwnerPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->brandName('Jaya Abadi Furniture')
+            ->brandName('CozyKost Furnishings')
             // ->brandLogo(asset('images/logo.png'))
             ->favicon(asset('images/logo.png'))
             ->darkMode(false)
