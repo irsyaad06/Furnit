@@ -60,10 +60,10 @@ class KursiResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('index')->rowIndex()->alignCenter()->label('No'),
-                TextColumn::make('nama'),
-                TextColumn::make('jenis'),
-                TextColumn::make('bahan'),
-                TextColumn::make('warna'),
+                TextColumn::make('nama')->searchable(),
+                TextColumn::make('jenis')->searchable(),
+                TextColumn::make('bahan')->searchable(),
+                TextColumn::make('warna')->searchable(),
                 TextColumn::make('panjang')->suffix(' cm')->badge() ->color('success'),
                 TextColumn::make('lebar')->suffix(' cm')->badge() ->color('primary'),
                 TextColumn::make('tinggi')->suffix(' cm')->badge() ->color('warning'),

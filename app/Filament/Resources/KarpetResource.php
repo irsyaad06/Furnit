@@ -57,8 +57,8 @@ class KarpetResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('index')->rowIndex()->alignCenter()->label('No'),
-                TextColumn::make('nama'),
-                TextColumn::make('bahan'),
+                TextColumn::make('nama')->searchable(),
+                TextColumn::make('bahan')->searchable(),
                 TextColumn::make('panjang')->suffix(' cm')->badge() ->color('success'),
                 TextColumn::make('lebar')->suffix(' cm')->badge() ->color('primary'),
                 TextColumn::make('harga')->money('IDR'),

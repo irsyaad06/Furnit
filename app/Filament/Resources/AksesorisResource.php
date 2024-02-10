@@ -39,6 +39,7 @@ class AksesorisResource extends Resource
                         ->schema([
                             TextInput::make('nama')->required(),
                             Select::make('jenis')
+                                ->label('Jenis Aksesoris')
                                 ->options([
                                     'Lampu' => 'Lampu',
                                     'Rak' => 'Rak',
@@ -66,8 +67,10 @@ class AksesorisResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('index')->rowIndex()->alignCenter()->label('No'),
-                TextColumn::make('nama'),
+                TextColumn::make('nama')->searchable(),
                 TextColumn::make('jenis')
+                ->searchable()
+                ->label('Jenis Aksesoris')
                 ->badge()
                 ->color(fn (string $state): string => match ($state) {
                     'Lampu' => 'danger',
@@ -76,10 +79,10 @@ class AksesorisResource extends Resource
                     'Hiasan Meja' => 'success',
                     'Hiasan Atap' => 'primary',
                 }),
-                TextColumn::make('bahan'),
-                TextColumn::make('warna'),
-                TextColumn::make('harga')->money('IDR'),
-                TextColumn::make('stok')->alignCenter(),
+                TextColumn::make('bahan')->searchable(),
+                TextColumn::make('warna')->searchable(),
+                TextColumn::make('harga')->money('IDR')->searchable(),
+                TextColumn::make('stok')->alignCenter()->searchable(),
             ])
             ->filters([
                 //
