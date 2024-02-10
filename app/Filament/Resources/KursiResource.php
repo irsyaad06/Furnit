@@ -21,7 +21,7 @@ class KursiResource extends Resource
 {
     protected static ?string $model = Kursi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'mdi-chair-rolling';
 
     protected static ?int $navigationSort = 2;
 
