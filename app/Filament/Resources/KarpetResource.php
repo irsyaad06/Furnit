@@ -31,8 +31,8 @@ class KarpetResource extends Resource
     {
         return $form
             ->schema([
-                Section::make('Masukkan Data Meja')
-                ->description('Masukkan data meja untuk pendataan dan dijual')
+                Section::make('Masukkan Data Karpet')
+                ->description('Masukkan data Karpet untuk pendataan dan dijual')
                 ->schema([
                     TextInput::make('nama')->required(),
                         Grid::make()

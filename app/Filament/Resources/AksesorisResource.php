@@ -32,8 +32,8 @@ class AksesorisResource extends Resource
     {
         return $form
             ->schema([
-                Section::make('Masukkan Data Meja')
-                ->description('Masukkan data meja untuk pendataan dan dijual')
+                Section::make('Masukkan Data Aksesoris')
+                ->description('Masukkan data Aksesoris untuk pendataan dan dijual')
                 ->schema([
                     Grid::make()
                         ->schema([
