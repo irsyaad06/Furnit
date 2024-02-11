@@ -13,6 +13,7 @@ class Aksesoris extends Model
 
     protected $fillable = [
 
+        'gambar',
         'nama',
         'jenis',
         'bahan',

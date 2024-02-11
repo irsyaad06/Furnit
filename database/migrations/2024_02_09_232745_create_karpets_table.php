@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('karpet', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
             $table->string('nama');
             $table->string('bahan');
             $table->integer('panjang');

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('aksesoris', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
             $table->string('nama');
             $table->string('jenis');
             $table->string('bahan');

@@ -13,6 +13,7 @@ class Karpet extends Model
 
     protected $fillable = [
 
+        'gambar',
         'nama',
         'bahan',
         'panjang',
