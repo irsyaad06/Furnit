@@ -6,6 +6,7 @@ use App\Filament\Resources\AksesorisResource\Pages;
 use App\Filament\Resources\AksesorisResource\RelationManagers;
 use App\Models\Aksesoris;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -13,6 +14,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,8 +59,8 @@ class AksesorisResource extends Resource
 
                             TextInput::make('harga')->required()->prefix('Rp'),
                             TextInput::make('stok')->required()->numeric()->default(0)->suffix('pcs'),
-                        ])
-                ->columns(1),
+                            FileUpload::make('gambar')->image()->preserveFilenames()->disk('public')->openable()->previewable()->required()->columnSpan('full'),
+                        ])->columns(1),
             ]);
     }
 
@@ -67,6 +69,7 @@ class AksesorisResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('index')->rowIndex()->alignCenter()->label('No'),
+                ImageColumn::make('gambar')->disk('public')->width(100)->height(100)->square()->visibility('private'),
                 TextColumn::make('nama')->searchable(),
                 TextColumn::make('jenis')
                 ->searchable()
